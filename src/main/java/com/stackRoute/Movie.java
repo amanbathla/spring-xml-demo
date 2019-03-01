@@ -11,6 +11,9 @@ public class Movie {
     Actor actor3;
 
 
+    Movie(){
+
+    }
     public Movie( Actor actor1, Actor actor2, Actor actor3) {
 
         this.actor1 = actor1;
