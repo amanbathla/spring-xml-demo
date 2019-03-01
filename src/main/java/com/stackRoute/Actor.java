@@ -9,6 +9,17 @@ public class Actor {
     String Gender;
     int age;
 
+
+    //Constructor
+
+    Actor(){
+    }
+    Actor(String name,String gender,int age){
+        this.name = name;
+        this.Gender = gender;
+        this.age = age;
+    }
+
     //Setter
 
     public void setName(String name) {

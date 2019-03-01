@@ -11,15 +11,44 @@
         <property name="name" value="Salman khan"/>
         <property name="Gender" value="Male"/>
         <property name="age" value="52"/>
-
-        <!-- collaborators and configuration for this bean go here -->
     </bean>
 
-    <!--Movie-->
-    <bean id = "Movie" class = "com.stackRoute.Movie">
-        <property name="actor" ref="Actor"/>
+
+    <!--Constructor arg on the basis of Name-->
+
+    <bean id = "Actor1" class = "com.stackRoute.Actor">
+        <constructor-arg name="name" value="Akshay Kumar1"/>
+        <constructor-arg name="gender" value="Male"/>
+        <constructor-arg name="age" value="50"/>
+
     </bean>
 
+    <!--Constructor arg on the basis of type-->
+
+    <bean id = "Actor2" class = "com.stackRoute.Actor">
+        <constructor-arg type = "java.lang.String" value="Akshay Kumar2"/>
+        <constructor-arg type="java.lang.String" value="Male"/>
+        <constructor-arg type="int" value="51"/>
+
+    </bean>
+
+
+    <!--Constructor arg on the basis of index-->
+
+    <bean id = "Actor3" class = "com.stackRoute.Actor">
+        <constructor-arg index="0"  value="ranveer singh"/>
+        <constructor-arg index="1"  value="male"/>
+        <constructor-arg index="2" value="33"/>
+
+    </bean>
+
+    <bean name="Movie1,Movie2" class = "com.stackRoute.Movie" scope="prototype">
+        <constructor-arg name="actor1" ref="Actor1"/>
+        <constructor-arg name="actor2" ref="Actor2"/>
+        <constructor-arg name="actor3" ref="Actor3"/>
+    </bean>
+
+  <!--using Constructor arguments-->
 
 
 </beans>
