@@ -1,0 +1,25 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+       xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <!--Actor-->
+
+    <bean id = "Actor" class = "com.stackRoute.Actor">
+        <property name="name" value="Salman khan"/>
+        <property name="Gender" value="Male"/>
+        <property name="age" value="52"/>
+
+        <!-- collaborators and configuration for this bean go here -->
+    </bean>
+
+    <!--Movie-->
+    <bean id = "Movie" class = "com.stackRoute.Movie">
+        <property name="actor" ref="Actor"/>
+    </bean>
+
+
+
+</beans>
