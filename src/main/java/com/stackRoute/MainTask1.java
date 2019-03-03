@@ -33,6 +33,7 @@ public class MainTask1 {
         ApplicationContext context1 = new ClassPathXmlApplicationContext("spring.xml");
         //  ((ClassPathXmlApplicationContext) context).registerShutdownHook();
         Movie movie1 = (Movie) context.getBean("Movie2");
+        movie1.getMyBeanName();
         System.out.println(movie1);
 
         System.out.println(movie == movie1);

@@ -1,6 +1,13 @@
 package com.stackRoute;
 
-public class Movie {
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.BeanFactoryAware;
+import org.springframework.beans.factory.BeanNameAware;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
+
+public class Movie implements ApplicationContextAware, BeanNameAware , BeanFactoryAware {
 
     //Declaration
     Actor actor1;
@@ -9,8 +16,8 @@ public class Movie {
 
     Actor actor2;
     Actor actor3;
-
-
+    private ApplicationContext context = null;
+    private BeanFactory beanFactory;
     Movie(){
 
     }
@@ -48,4 +55,33 @@ public class Movie {
 
     //To String Method
 
+
+    // My methods for bean factory Aware
+
+
+    public void getMyBeanName() {
+        Movie myBeanName = beanFactory.getBean(Movie.class);
+        System.out.println(beanFactory.isSingleton("Movie1"));
+        System.out.println(beanFactory.isPrototype("Movie1"));
+    }
+
+
+    //Application Aware Methods
+
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        this.context = context;
+
+    }
+
+
+    // bean name aware to let us know which bean is currently being Processed
+
+    public void setBeanName(String beanName) {
+        System.out.println("Bean is :"+ beanName);
+    }
+
+    public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
+        this.beanFactory = beanFactory;
+        System.out.println(beanFactory.getClass().getName());
+    }
 }

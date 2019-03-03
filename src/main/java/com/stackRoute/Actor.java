@@ -1,13 +1,14 @@
 package com.stackRoute;
 
-public class Actor {
+
+public class Actor  {
 
     //Declaration
 
 
-    String name;
-    String Gender;
-    int age;
+    private String name;
+    private String Gender;
+    private int age;
 
 
     //Constructor
