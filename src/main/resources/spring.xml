@@ -47,7 +47,10 @@
 
   <!--using Constructor arguments-->
 
-
+   <!--using bean LifeCycle Class-->
     <bean class="com.stackRoute.BeanLifecycleDemoBean" init-method="customInit" />
+
+    <!--Using Bean Post Processor-->
+    <bean class="com.stackRoute.BeanPostProcessorDemoBean" />
 
 </beans>
