@@ -48,4 +48,6 @@
   <!--using Constructor arguments-->
 
 
+    <bean class="com.stackRoute.BeanLifecycleDemoBean" init-method="customInit" />
+
 </beans>

@@ -25,13 +25,14 @@ public class MainTask1 {
 
         // Using Application context
       ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
-      //  ((ClassPathXmlApplicationContext) context).registerShutdownHook();
+       ((ClassPathXmlApplicationContext) context).registerShutdownHook();
         Movie movie = (Movie) context.getBean("Movie1");
         System.out.println(movie);
 
 
         ApplicationContext context1 = new ClassPathXmlApplicationContext("spring.xml");
-        //  ((ClassPathXmlApplicationContext) context).registerShutdownHook();
+        // To dispose bean we writr this line
+        ((ClassPathXmlApplicationContext) context).registerShutdownHook();
         Movie movie1 = (Movie) context.getBean("Movie2");
         movie1.getMyBeanName();
         System.out.println(movie1);
